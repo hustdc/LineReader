@@ -91,7 +91,7 @@
 		m_currentOffset += [chunk length];
 	}
 
-	NSString* line = [currentData stringValueWithEncoding:NSUTF8StringEncoding];
+	NSString* line = [[[NSString alloc] initWithData:currentData encoding:NSUTF8StringEncoding] autorelease];
     // finished with data
     [currentData release], currentData = nil;
 	return line;
