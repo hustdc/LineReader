@@ -80,7 +80,7 @@
 		}
 		NSData* chunk = [m_fileHandle readDataOfLength:m_chunkSize]; // always length = 10
 		// Find the location and length of the next line delimiter.
-		NSRange newLineRange = [chunk rangeOfData:newLineData];
+		NSRange newLineRange = [chunk rangeOfData:newLineData options:0 range:NSMakeRange(0, chunk.length);
 		if (newLineRange.location != NSNotFound) {
 			// Include the length so we can include the delimiter in the string.
 			NSRange subDataRange = NSMakeRange(0, newLineRange.location + [newLineData length]);
